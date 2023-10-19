@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+      <ion-button color="secondary" slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-button>
+    <ion-title>RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card>
+      <img src="assets/imagenes/usuario2.jpg" />
+      <ion-card-header>
+        <ion-card-title>Bienvenido: {{username}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+      La app capaz de ser utilizada en que permite que cada alumno registre su propia asistencia.</ion-card-content>
+    </ion-card>
+
+    <br/>
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nuevoUsuario.nombre" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="nuevoUsuario.correo" type="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="nuevoUsuario.password" type="password"></ion-input>
+    </ion-item>
+  
+    
+    <ion-button color="secondary" expand="full" (click)="crearNuevoUsuario()">Mostrar API</ion-button>
+     
+    <ion-card color="secondary">
+      <ion-card-header>
+        <ion-card-title>Usuarios</ion-card-title>
+      </ion-card-header>
+      <ion-list>
+        <ion-item *ngFor="let usuario of myUsuarios">
+          <ion-label>id:{{usuario.id}}</ion-label>
+          <ion-label>usuario:{{usuario.correo}}</ion-label>
+          <ion-label>contraseña:{{usuario.password}}</ion-label>
+          <ion-label>activoBool:{{usuario.id}}</ion-label>
+        </ion-item>
+      </ion-list>
+  
+    </ion-card>
+   
+</ion-content>
